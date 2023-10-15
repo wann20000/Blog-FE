@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App';
 import Login from './authentication/login';
 import Register from './authentication/register';
 import './index.css'
@@ -12,17 +13,17 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <App />,
   },
 
   {
     path: "/auth/login",
-    element: <Login/>,
+    element: <Login />,
   },
-  
+
   {
     path: "/auth/register",
-    element: <Register/>,
+    element: <Register />,
   },
 ]);
 
