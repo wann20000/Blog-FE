@@ -4,19 +4,20 @@ import { createUserType } from "../utils/types";
 export const getUserService = async () => {
     try {
         const response = await axiosInstance.get('/users')
-        console.log(response)
-        return response
+        if (response.status !== 200) {
+            return { message: "Error" }
+        }
+        return response.data
     } catch (error) {
-        
+
     }
 }
 
-export const createUserService = async (body:createUserType) => {
+export const createUserService = async (body: createUserType) => {
     try {
         const response = await axiosInstance.post('/users', body)
-        console.log(response)
         return response
     } catch (error) {
-        
+
     }
 }
